@@ -4,7 +4,6 @@ const Discord = require('discord.js');
  const dateFormat = require('dateformat');
  const client = new Discord.Client(); 
  const canvas = require("canvas");
- const Canvas = require("canvas");
  const prefix = "#";
  const token = 'BOT_TOKEN'; 
 
@@ -231,7 +230,7 @@ client.on('guildMemberAdd',async member => {
     const jimp = require('jimp');
     const w = ['./welcome_4.png'];
           let Image = Canvas.Image,
-              canvas = Canvas create.Canvas(800, 300),
+              canvas = Canvas.createCanvas(800, 300),
               ctx = canvas.getContext('2d');
           ctx.patternQuality = 'bilinear';
           ctx.filter = 'bilinear';
