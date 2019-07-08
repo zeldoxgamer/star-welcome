@@ -328,3 +328,7 @@ client.on("guildMemberAdd", member => {
 انت العضو رقم ${member.guild.memberCount} `)
 }).catch(console.error)
 })
+
+
+
+client.login(prossec.env.BOT_TOKEN);
