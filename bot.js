@@ -13,7 +13,7 @@ const client = new Discord.Client()
 const welcome = JSON.parse(fs.readFileSync('./welcomer.json' , 'utf8'));
 client.on('message', async message => {
     let messageArray = message.content.split(" ");
-   if(message.content.startsWith(prefix + "setLeave")) {
+   if(message.content.startsWith(prefix + "setleave")) {
              
     let filter = m => m.author.id === message.author.id;
     let thisMessage;
@@ -53,7 +53,7 @@ client.on('message', async message => {
                         errors: ['time']
                       })
                       let embed = new Discord.RichEmbed()
-                      .setTitle('**Done The Leave Msg Code Has Been Setup**')
+                      .setTitle('**لقد تم تتثبيت راسالة المغادرة بنجاح**')
                       .addField('Message:', `${thisMessage}`)
                       .addField('Channel:', `${boi}`)
                       .setThumbnail(message.author.avatarURL)
@@ -81,13 +81,13 @@ client.on('message', message => {
  
     let room = message.content.split(" ").slice(1);
     let findroom = message.guild.channels.find('name', `${room}`)
-    if(message.content.startsWith(prefix + "setWelcomer")) {
+    if(message.content.startsWith(prefix + "setwelcome")) {
         if(!message.channel.guild) return message.reply('**This Command Only For Servers**');
-        if(!message.member.hasPermission('MANAGE_GUILD')) return message.channel.send('**Sorry But You Dont Have Permission** `MANAGE_GUILD`' );
-if(!room) return message.channel.send('Please Type The Channel Name')
+        if(!message.member.hasPermission('MANAGE_GUILD')) return message.channel.send('**ليست لديك هده الرتبة** `MANAGE_GUILD`' );
+if(!room) return message.channel.send('`#setwelcome channel` المرجوا كتابة اسم الروم ')
 if(!findroom) return message.channel.send('Cant Find This Channel')
 let embed = new Discord.RichEmbed()
-.setTitle('**Done The Welcome Code Has Been Setup**')
+.setTitle('**تم تثبيت رسالة الترحيب **')
 .addField('Channel:', `${room}`)
 .addField('Requested By:', `${message.author}`)
 .setThumbnail(message.author.avatarURL)
@@ -325,7 +325,7 @@ client.on('guildMemberAdd', member => {
     const logChannel = member.guild.channels.find(channel => channel.name === `${welcome[member.guild.id].channel}`);
     if(!logChannel) return;
       setTimeout(() => {
-    logChannel.send(`Invited By: <@${inviter.id}>`);
+    logChannel.send(`<@${inviter.id}> تمت دعوتك بواسطة <@${invite.id}>`);
   },2000)
   fs.writeFileSync("./welcome.json", JSON.stringify(welcome), (err) => {
     if (err) console.error(err)
