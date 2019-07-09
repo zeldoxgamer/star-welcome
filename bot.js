@@ -1,4 +1,5 @@
 const Discord = require('discord.js'); // Discord Package
+const moment = require("moment");  //moment package
 const { User, MessageMentions } = require('discord.js') // Disocrd Package Classes
 const Canvas = require('canvas'); // Canvas Package for photo stuffs
 const Jimp = require('jimp'); // Jimp Package to get User's Avatar
