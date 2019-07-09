@@ -7,7 +7,7 @@ const path = require('path'); // Path Package to get paths easily
 const ms = require('parse-ms'); // parse-ms Package to format ms to somethings
 const fs = require('fs'); // file-sytem package.
 const prefix = "#" ;
-
+const Client = new Discord.Client() 
 
 const welcome = JSON.parse(fs.readFileSync('./welcomer.json' , 'utf8'));
 client.on('message', async message => {
