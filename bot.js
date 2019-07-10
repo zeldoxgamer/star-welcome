@@ -325,7 +325,7 @@ client.on('guildMemberAdd', member => {
     const logChannel = member.guild.channels.find(channel => channel.name === `${welcome[member.guild.id].channel}`);
     if(!logChannel) return;
       setTimeout(() => {
-    logChannel.send(`<@${inviter.id}> تمت دعوتك بواسطة <@${author.id}>`);
+    logChannel.send(`<@${inviter.id}> تم دعوتك بواسطة`);
   },2000)
   fs.writeFileSync("./welcome.json", JSON.stringify(welcome), (err) => {
     if (err) console.error(err)
